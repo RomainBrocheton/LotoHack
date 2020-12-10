@@ -1,0 +1,47 @@
+header{
+    width: 80vw;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+
+    .logo{
+        height: 100px; width: auto;
+    }
+
+    nav{
+        width: 60%;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+
+        a{
+            color: $on-background;
+            text-transform: uppercase;
+            text-decoration: none;
+
+            padding: 1rem;
+
+            background-image: linear-gradient(to right, $primary, $secondary);
+            background-position: 0% 100%;
+            background-repeat: no-repeat;
+            background-size: 0% 5px;
+
+            @include transition(0.8s);
+
+            &:hover{
+                color: $on-background;
+                text-decoration: none;
+
+                background-size: 100% 5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+footer{
+    background: $background-variant;
+    color: $on-background-variant;
+    padding: 1.5rem;
+
+    a{
+        color: $on-background-variant;
+
+        &:hover{
+            color: $on-background-variant;
+        }
+    }
+}
