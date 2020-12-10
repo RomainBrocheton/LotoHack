@@ -15,16 +15,16 @@ Route::add('/genielogiciel/mentions.php',function(){
     require('view/mentionsView.php');
 });
 Route::add('/genielogiciel/statistiques.php',function(){
-    require('view/statistiquesView.php');
+    StatsView();
 });
 Route::add('/genielogiciel/reducteur.php',function(){
-    require('view/reducteurView.php');
+    ReducteurView();
 });
 Route::add('/genielogiciel/generateur.php',function(){
-    require('view/generateurView.php');
+    GenerateurView();
 });
 Route::add('/genielogiciel/importation.php',function(){
-    require('view/importationView.php');
+    ImportView();
 });
 
 Route::run('/');
