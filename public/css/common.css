@@ -129,6 +129,30 @@ button.btn-secondaire:hover, input[type=button].btn-secondaire:hover {
   background: #fff;
 }
 
+button.btn-dark-primaire, input[type=button].btn-dark-primaire {
+  color: #a84caf;
+  background: #262933;
+  border: solid 1px #262933;
+}
+
+button.btn-dark-primaire:hover, input[type=button].btn-dark-primaire:hover {
+  color: #fff;
+  background: #a84caf;
+}
+
+button.btn-gradient-hover, input[type=button].btn-gradient-hover {
+  color: #a84caf;
+  background: linear-gradient(90deg, #262933 0%, #262933 50%, #a84caf 50%, #00c0ba 100%);
+  background-size: 200% 200%;
+  background-position: 0%;
+  border: solid 1px #262933;
+}
+
+button.btn-gradient-hover:hover, input[type=button].btn-gradient-hover:hover {
+  color: #fff;
+  background-position: 100%;
+}
+
 header {
   width: 80vw;
   display: flex;
@@ -184,5 +208,24 @@ footer a {
 
 footer a:hover {
   color: #aaa;
+}
+
+#importation {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+#importation button i.fas {
+  font-size: 3.5vh;
+  padding: 1rem;
+  display: block;
+}
+
+#importation button span {
+  color: white;
 }
 /*# sourceMappingURL=common.css.map */
