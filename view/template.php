@@ -17,6 +17,8 @@
 
         <link href="./public/css/common.css" rel="stylesheet"/> 
         <script src="./public/js/main.js"></script>
+
+        <?php if(isset($head)) echo $head; ?>
     </head>
     <body>
         <header role="banner">
