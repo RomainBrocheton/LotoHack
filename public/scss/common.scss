@@ -116,6 +116,35 @@ h1, h2, h3, h4, h5, h6{
   -webkit-text-fill-color: transparent;
 }
 
+a{
+    color: $primary;
+
+    @include transition();
+}
+
+button, input[type=button]{
+    padding: 0.7rem 1rem;
+    border-radius: 3px;
+    @include transition(0.5s);
+
+    @mixin button($color, $bg, $hoverColor, $hoverBg){
+        color: $color; background: $bg;
+        border: solid 1px $bg;
+
+        &:hover{
+            color: $hoverColor; background: $hoverBg;
+        }
+    }
+
+    &.btn-primaire{
+        @include button($on-primary, $primary, $primary, $surface);
+    }
+    &.btn-secondaire{
+        @include button($on-secondary, $secondary, $secondary, $surface);
+    }
+    
+}
+
 @import 'header';
 @import 'template';
 @import 'footer';

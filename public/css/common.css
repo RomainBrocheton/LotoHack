@@ -96,6 +96,39 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: transparent;
 }
 
+a {
+  color: #a84caf;
+  transition: all 0.4s;
+}
+
+button, input[type=button] {
+  padding: 0.7rem 1rem;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+button.btn-primaire, input[type=button].btn-primaire {
+  color: #fff;
+  background: #a84caf;
+  border: solid 1px #a84caf;
+}
+
+button.btn-primaire:hover, input[type=button].btn-primaire:hover {
+  color: #a84caf;
+  background: #fff;
+}
+
+button.btn-secondaire, input[type=button].btn-secondaire {
+  color: #fff;
+  background: #00c0ba;
+  border: solid 1px #00c0ba;
+}
+
+button.btn-secondaire:hover, input[type=button].btn-secondaire:hover {
+  color: #00c0ba;
+  background: #fff;
+}
+
 header {
   width: 80vw;
   display: flex;
