@@ -19,3 +19,7 @@
         require('view/importationView.php');
     }
     
+
+    function importation(){
+        require('controller/importAuto.php');
+    }
