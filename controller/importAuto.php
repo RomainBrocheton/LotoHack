@@ -94,4 +94,5 @@
 
     // read files
     $result = getData($files);
+    var_dump($result);
 ?>
