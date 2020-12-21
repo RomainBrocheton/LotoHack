@@ -88,6 +88,7 @@
     // crawling
     $url = "https://www.fdj.fr/jeux-de-tirage/loto/statistiques";
     $urls = crawler($url);
+    var_dump($urls);
 
     // unzip files
     $files = unZip($urls);

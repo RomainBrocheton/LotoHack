@@ -15,8 +15,7 @@
         <span>Importation automatique</span>
     </button>
     -->
-    <a href="import">Importer automatiquement</a>
-    <p>ou <a href="importation.php?manuelle">importer manuellement un fichier</a></p>
+    <a href="importAuto">Importer automatiquement</a>
 </div>
 
 <?php 
