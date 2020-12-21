@@ -1,7 +1,7 @@
 <?php
     
     /**
-     * CRAWLER : Crawle $url et récupère les adresses URL des fichiers ZIP résultats du loto.
+     * Crawle $url et récupère les adresses URL des fichiers ZIP résultats du loto.
      *
      * @param string $url : adresse à crawler
      * @return array|null : tableau contenant les urls des fichiers ZIP
@@ -49,7 +49,13 @@
         return $files;
     }
 
-    function getData(array $paths){
+    /**
+     * Retourne un array contenant tous les tirages
+     *
+     * @param array $paths : filepaths des fichiers csv
+     * @return array|null  : tirages
+     */
+    function getData(array $paths) : ? array{
         $result = array();
 
         foreach($paths as $path){
@@ -79,38 +85,13 @@
         return $result;
     }
 
-    $exec_time = microtime(true);
-
     // crawling
-    echo "Crawling ";
-    $start = microtime(true);
-
     $url = "https://www.fdj.fr/jeux-de-tirage/loto/statistiques";
     $urls = crawler($url);
 
-    $time_elapsed_secs = microtime(true) - $start;
-    echo '(' . round($time_elapsed_secs,3) . 's)<br/>';
-
     // unzip files
-    echo "UnZip ";
-    $start = microtime(true);
-
     $files = unZip($urls);
 
-    $time_elapsed_secs = microtime(true) - $start;
-    echo '(' . round($time_elapsed_secs,3) . 's)<br/>';
-
     // read files
-    echo "Lecture ";
-    $start = microtime(true);
-
     $result = getData($files);
-
-    $time_elapsed_secs = microtime(true) - $start;
-    echo '(' . round($time_elapsed_secs,3) . 's)<br/>';
-    
-    echo "Lecture terminée, <b>" . (count($result)-1) . "</b> tirages récupérés.<br/>";
-
-    $exec_time = microtime(true) - $exec_time;
-    echo 'Importation terminée (' . round($exec_time,3) . 's écoulées)<br/>';
 ?>
