@@ -85,6 +85,7 @@
         return $result;
     }
 
+    $start = microtime(true);
     // crawling
     $url = "https://www.fdj.fr/jeux-de-tirage/loto/statistiques";
     $urls = crawler($url);
@@ -95,5 +96,8 @@
 
     // read files
     $result = getData($files);
+
+    echo "temps exec : " . (microtime(true) - $start);
+
     var_dump($result);
 ?>
