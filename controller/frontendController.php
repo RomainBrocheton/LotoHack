@@ -23,3 +23,7 @@
     function importation(){
         require('controller/importAuto.php');
     }
+
+    function stats(){
+        require('controller/stats.php'); 
+    }

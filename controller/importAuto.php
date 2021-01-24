@@ -68,6 +68,7 @@
                 $i++;
                 array_push($result, 
                     array(
+                        "id_tirage" => $data[0],
                         "date" => $data[2],
                         "jour" => $data[1],
                         "boule_1" => $data[4],
@@ -85,6 +86,25 @@
         return $result;
     }
 
+    /**
+     * Update database
+     * @param array $result : resultats tirages
+     * @return void
+     */
+    function mise_a_jour_tables($result) {
+        create_tables();  
+        clear_tables();
+        stats();
+        import_tirages($result);
+
+        import_numeros($result);
+
+        import_numeros_chance($result);
+    }
+
+
+
+    $start = microtime(true);
     // crawling
     $url = "https://www.fdj.fr/jeux-de-tirage/loto/statistiques";
     $urls = crawler($url);
@@ -95,5 +115,12 @@
 
     // read files
     $result = getData($files);
+
+    echo "temps exec : " . (microtime(true) - $start);
+    
+
     var_dump($result);
+
+    mise_a_jour_tables($result);
+
 ?>
