@@ -13,10 +13,11 @@ function calcul_poids(array $res) {
 
 /**
 * Calcul des dizaines
-* * @param array $boules : tableau contenant les numéros des boules 1 à 5
+* * @param array $res : tableau contenant les numéros des boules 1 à 5
 * * @return int  : nombre de dizaines
 */
-function dizaines(array $boules) {
+function dizaines(array $res) {
+    $boules = array((int)$res["boule_1"], (int)$res["boule_2"], (int)$res["boule_3"], (int)$res["boule_4"], (int)$res["boule_5"]);
     $nb = 0;
     $d0 = 0;
     $d1 = 0;
@@ -46,10 +47,11 @@ function dizaines(array $boules) {
 
 /**
 * Calcul des finals
-* * @param array $boules : tableau contenant les numéros des boules 1 à 5
+* * @param array $res : tableau contenant les numéros des boules 1 à 5
 * * @return int  : nombre de finals
 */
-function finals(array $boules) {
+function finals(array $res) {
+    $boules = array((int)$res["boule_1"], (int)$res["boule_2"], (int)$res["boule_3"], (int)$res["boule_4"], (int)$res["boule_5"]);
     $nb = 0;
     $f0 = 0;
     $f1 = 0;
@@ -98,7 +100,7 @@ function finals(array $boules) {
 }
 
 /**
-* Prend en paramètre un nombre et les résultats des tirages et retourne la fréquence du nombre
+* Prend en paramètre un nombre et les résultats des tirages et retourne la fréquence du numéro par tirage
 * * @param int $num : numéro
 * * @param array $result : tirages
 * * @return float : frequence
@@ -167,84 +169,6 @@ function nombres_pairs(array $res) {
      return $nb_pairs;
 }
 
-
-/**
-* Calcul le poids moyen des tirages
-* * @param array $result : tirages
-* * @return int : poids moyen
-*/
-function poids_moy(array $result) {
-    $poids_moy = 0;
-    $i = 0;
-    $poids = 0;
-    foreach($result as $res){
-        if ($res["id_tirage"] != 'annee_numero_de_tirage') {
-            $poids = $poids + calcul_poids($res);
-            $i++;
-        }
-    }
-    $poids_moy = $poids/$i;
-    return $poids_moy;
-}
-
-/**
-* Calcul le nombre moyen de numéros pairs des tirages
-* * @param array $result : tirages
-* * @return int : nombre de numéros pairs moyen
-*/
-function pairs_moy(array $result) {
-    $pairs_moy = 0;
-    $i = 0;
-    $pairs = 0;
-    foreach($result as $res){
-        if ($res["id_tirage"] != 'annee_numero_de_tirage') {
-            $pairs = $pairs + nombres_pairs($res);
-            $i++;
-        }
-    }
-    $pairs_moy = $pairs/$i;
-    return $pairs_moy;
-}
-
-/**
-* Calcul le nombre moyen de dizaines des tirages
-* * @param array $result : tirages
-* * @return int : nombre de dizaines moyen
-*/
-function dizaines_moy(array $result) {
-    $dizaines_moy = 0;
-    $i = 0;
-    $dizaines = 0;
-    foreach($result as $res){
-        if ($res["id_tirage"] != 'annee_numero_de_tirage') {
-            $dizaines = $dizaines + dizaines(array((int)$res["boule_1"], (int)$res["boule_2"], (int)$res["boule_3"], (int)$res["boule_4"], (int)$res["boule_5"]));
-            $i++;
-        }
-    }
-    $dizaines_moy = $dizaines/$i;
-    return $dizaines_moy;
-}
-
-/**
-* Calcul le nombre moyen de finals des tirages
-* * @param array $result : tirages
-* * @return int : nombre de finals moyen
-*/
-function finals_moy(array $result) {
-    $finals_moy = 0;
-    $i = 0;
-    $finals = 0;
-    foreach($result as $res){
-        if ($res["id_tirage"] != 'annee_numero_de_tirage') {
-            $finals = $finals + finals(array((int)$res["boule_1"], (int)$res["boule_2"], (int)$res["boule_3"], (int)$res["boule_4"], (int)$res["boule_5"]));
-            $i++;
-        }
-    }
-    $finals_moy = $finals/$i;
-    return $finals_moy;
-}
-
-
 /**
 * Calcul le poids moyen associé aux numéros chance
 * * @param int $num : numéro chance
@@ -289,9 +213,6 @@ function calcul_pairs_moy_c(int $num, array $result) {
     return $pairs_moy;
 }
 
-
-
-
 /**
 * Calcul le nombre moyen de dizaines associées aux numéros chance
 * * @param int $num : numéro chance
@@ -305,7 +226,7 @@ function calcul_dizaines_moy_c(int $num, array $result) {
     foreach($result as $res){
         if ($res["id_tirage"] != 'annee_numero_de_tirage') {
             if ($res["boule_C"] == $num) {
-                $dizaines = $dizaines + dizaines(array((int)$res["boule_1"], (int)$res["boule_2"], (int)$res["boule_3"], (int)$res["boule_4"], (int)$res["boule_5"]));
+                $dizaines = $dizaines + dizaines($res);
                 $i++;
             }
         }
@@ -313,7 +234,6 @@ function calcul_dizaines_moy_c(int $num, array $result) {
     $dizaines_moy = $dizaines/$i;
     return $dizaines_moy;
 }
-
 
 /**
 * Calcul le nombre moyen de finals associés aux numéros chance
@@ -328,7 +248,7 @@ function calcul_finals_moy_c(int $num, array $result) {
     foreach($result as $res){
         if ($res["id_tirage"] != 'annee_numero_de_tirage') {
             if ($res["boule_C"] == $num) {
-                $finals = $finals + finals(array((int)$res["boule_1"], (int)$res["boule_2"], (int)$res["boule_3"], (int)$res["boule_4"], (int)$res["boule_5"]));
+                $finals = $finals + finals($res);
                 $i++;
             }
         }
@@ -337,5 +257,46 @@ function calcul_finals_moy_c(int $num, array $result) {
     return $finals_moy;
 }
 
+/**
+* Calcul du ou des numéro(s) le(s) plus fréquent(s)
+* * @param array $array : tableau
+* * @return array : numéro(s) le(s) plus fréquent(s)
+*/
+function num_freq_max(array $array) {
+    $max = 0;
+    $num = array();
+    foreach ($array as $row) {
+        if ($max < floatval($row[1])) {
+            $max = floatval($row[1]);
+        }
+    }
+    foreach ($array as $r) {
+        if ($max == floatval($r[1])) {
+            array_push($num, $r[0]);
+        }
+    }
+    return $num;
+}
+
+/**
+* Calcul du ou des numéro(s) le(s) moins fréquent(s)
+* * @param array $array : tableau
+* * @return array : numéro(s) le(s) moins fréquent(s)
+*/
+function num_freq_min(array $array) {
+    $min = 1;
+    $num = array();
+    foreach ($array as $row) {
+        if ($min > floatval($row[1])) {
+            $min = floatval($row[1]);
+        }
+    }
+    foreach ($array as $r) {
+        if ($min == floatval($r[1])) {
+            array_push($num, $r[0]);
+        }
+    }
+    return $num;
+}
 
 ?>

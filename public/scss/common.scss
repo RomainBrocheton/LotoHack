@@ -165,6 +165,46 @@ button, input[type=button]{
     
 }
 
+
+
+tr {
+    &:nth-child(odd).tab-row {
+        background-color: rgba(168,76,175,0.1);
+    }
+    &:nth-child(even).tab-row {
+        background-color: rgba(0,192,186,0.1);
+    }
+
+}
+th,tr.tab-row {
+    text-align: center;
+}
+.table {
+    & thead {
+        & th {
+    vertical-align: middle;
+        }
+    }
+}
+
+strong {
+    &.tirages {
+        padding: 0px 5px;
+        border-radius: 0.4em;
+        float:right;
+        margin-right: 2em;
+    }
+    &:nth-child(odd).tirages {
+        background-color: rgba(168,76,175,0.5);
+    }
+    &:nth-child(even).tirages {
+        background-color: rgba(0,192,186,0.5);
+    }
+}
+i {
+    text-align: center;
+}
+
 @import 'header';
 @import 'template';
 @import 'footer';

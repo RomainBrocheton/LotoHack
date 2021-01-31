@@ -27,3 +27,6 @@
     function stats(){
         require('controller/stats.php'); 
     }
+    function grilleGen(){
+        require('controller/grilleGen.php'); 
+    }
