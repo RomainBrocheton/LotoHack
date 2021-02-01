@@ -45,7 +45,7 @@
         
 ?>
 
-<table>
+<table class="sysred">
     <tr>
         <th>Grille n°</th>
         <th>Numéros</th>

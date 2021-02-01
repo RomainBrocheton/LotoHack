@@ -169,6 +169,39 @@ th, tr.tab-row {
   vertical-align: middle;
 }
 
+table.sysred tr {
+  color: #000;
+}
+
+table.sysred tr:nth-of-type(odd) {
+  background: #ddd;
+}
+
+table.sysred tr span {
+  background: white;
+  display: inline-block;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  margin: 5px;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+table.sysred tr span:nth-of-type(odd) {
+  border: solid 1px blue;
+}
+
+table.sysred tr span:nth-of-type(even) {
+  border: solid 1px red;
+}
+
+table.sysred tr th, table.sysred tr td {
+  padding: 1rem;
+}
+
 strong.tirages {
   padding: 0px 5px;
   border-radius: 0.4em;
