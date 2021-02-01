@@ -96,3 +96,13 @@
     function importation(){
         require('controller/importAuto.php');
     }
+<<<<<<< HEAD
+=======
+
+    function stats(){
+        require('controller/stats.php'); 
+    }
+    function grilleGen(){
+        require('controller/grilleGen.php'); 
+    }
+>>>>>>> BDD

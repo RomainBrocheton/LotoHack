@@ -68,23 +68,57 @@
                 $i++;
                 array_push($result, 
                     array(
-                        "date" => $data[2],
+                        "id_tirage" => $data[0],
+                        "date_tirage" => $data[2],
                         "jour" => $data[1],
                         "boule_1" => $data[4],
                         "boule_2" => $data[5],
                         "boule_3" => $data[6],
                         "boule_4" => $data[7],
                         "boule_5" => $data[8],
-                        "boule_C" => $data[9],
-                        "combinaison" => $data[10]
+                        "boule_C" => $data[9]
                     )
                 );
             }
         }
-
         return $result;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Change le format de date de dd/mm/yyyy à yyyy-mm-dd
+     *
+     * @param string $date_i : date au format dd/mm/yyyy
+     * @return string : date au format yyyy-mm-dd
+     */
+    function change_date(string $date_i){
+        $date = str_replace('/', '-', $date_i);
+        return date('Y-m-d', strtotime($date));
+    }
+
+    /**
+     * Update database
+     * @param array $result : resultats tirages
+     * @return void
+     */
+    function mise_a_jour_tables($result) {
+        create_tables();  
+        clear_tables();
+        stats();
+        import_tirages($result);
+
+        import_numeros($result);
+
+        import_numeros_chance($result);
+
+        echo "<br />L'importation des données est un succès.<br />
+        Vous pouvez revenir à la page précédente.<br />";
+    }
+
+
+
+>>>>>>> BDD
     $start = microtime(true);
     // crawling
     $url = "https://www.fdj.fr/jeux-de-tirage/loto/statistiques";
@@ -98,6 +132,15 @@
     $result = getData($files);
 
     echo "temps exec : " . (microtime(true) - $start);
+<<<<<<< HEAD
 
     var_dump($result);
+=======
+    
+
+    /*var_dump($result);*/
+
+    mise_a_jour_tables($result);
+
+>>>>>>> BDD
 ?>

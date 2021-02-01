@@ -32,5 +32,11 @@ Route::add('/genielogiciel/importation.php',function(){
 Route::add('/genielogiciel/importAuto.php',function(){
     require('controller/importAuto.php');
 });
+Route::add('/genielogiciel/stats.php',function(){
+    stats();
+});
+Route::add('/genielogiciel/grilleGen.php',function(){
+    grilleGen();
+});
 
 Route::run('/');
