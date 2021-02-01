@@ -26,13 +26,14 @@
 </form>
 </div>
 <?php 
-    
-    if ( in_array(1,$code_erreur) )
-        echo '<p style="color:red">Un des numéros n\'est pas compris entre 1 et 49!</p>';
-    if ( in_array(2,$code_erreur) )
-        echo '<p style="color:red">Vous ne pouvez indiquer chaque numéro qu\'une fois!</p>';
-    if ( in_array(3,$code_erreur) )
-        echo '<p style="color:red">Vous devez indiquer de 5 à 8 numéros!</p>';
+    if(isset($code_erreur)){
+        if ( in_array(1,$code_erreur) )
+            echo '<p style="color:red">Un des numéros n\'est pas compris entre 1 et 49!</p>';
+        if ( in_array(2,$code_erreur) )
+            echo '<p style="color:red">Vous ne pouvez indiquer chaque numéro qu\'une fois!</p>';
+        if ( in_array(3,$code_erreur) )
+            echo '<p style="color:red">Vous devez indiquer de 5 à 8 numéros!</p>';
+    }
 
     if(isset($result))
     {
