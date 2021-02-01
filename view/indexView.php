@@ -4,7 +4,7 @@
     ob_start();
 ?>
 
-<h1>Bienvenue sur <strong class="lotohack">LotoHACK</strong></h1>
+<h1>Bienvenue sur <strong>LotoHACK</strong></h1>
 
 <?php 
     $content = ob_get_clean();
