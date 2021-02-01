@@ -5,7 +5,7 @@
  */
 function printImg(url) {
     var win = window.open('');
-    win.document.write('<img src="' + url + '" onload=window.print();window.close()" />');
+    win.document.write('<img src="' + url + '" onload="window.print();window.close()" />');
     win.focus();
 }
 
