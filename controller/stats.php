@@ -115,9 +115,10 @@ function calcul_frequences(int $num, array $result) {
                 if ($res["boule_" . (string)$k] == $num) {
                     $n++;
                 }
+                $i++;
             }
         }
-        $i++;
+        
     }
     $freq = $n/$i;
     return $freq;
