@@ -17,6 +17,7 @@
 
         <link href="./public/css/common.css" rel="stylesheet"/> 
         <script src="./public/js/main.js"></script>
+        <script src="./public/js/fonctions.js"></script>
 
         <?php if(isset($head)) echo $head; ?>
     </head>
@@ -29,7 +30,7 @@
                 <a href="index.php">Accueil</a>
                 <a href="statistiques.php">Statistiques</a>
                 <a href="reducteur.php">Réducteur</a>
-                <a href="generateur.php">Générateur de grille</a>
+                <a href="generateur.php">Grilles à jouer</a>
                 <a href="importation.php">Importation</a>
             </nav>
         </header>
