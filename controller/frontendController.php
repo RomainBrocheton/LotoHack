@@ -66,7 +66,7 @@
         $numeros = htmlspecialchars($post['numeros_indiques']);
         $numeros=explode(',', $numeros);
         sort($numeros);
-        $garantie = htmlspecialchars($post['garantie']);
+        
 
         $code_erreur=[];
         for ($i=0 ; $i<count($numeros) ; $i++)
@@ -79,6 +79,12 @@
         if ( count($numeros)<5 || count($numeros)>8 )
             array_push($code_erreur,3);
         
+
+        if(empty($post['garantie']))
+            array_push($code_erreur, 4);
+        else 
+            $garantie = htmlspecialchars($post['garantie']);
+
 
         if ( count($code_erreur)==0 )   $result = Systeme_reducteur($numeros, $garantie);
 

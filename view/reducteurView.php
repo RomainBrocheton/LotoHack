@@ -27,6 +27,8 @@
 </div>
 <?php 
     if(isset($code_erreur)){
+        if ( in_array(4,$code_erreur) )
+            echo '<p style="color:red">Vous devez indiquer une garantie !</p>';
         if ( in_array(1,$code_erreur) )
             echo '<p style="color:red">Un des numéros n\'est pas compris entre 1 et 49!</p>';
         if ( in_array(2,$code_erreur) )
