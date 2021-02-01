@@ -142,6 +142,26 @@ button, input[type=button]{
     &.btn-secondaire{
         @include button($on-secondary, $secondary, $secondary, $surface);
     }
+
+    &.btn-dark-primaire{
+        color: $primary; background: $background;
+        border: solid 1px $background;
+
+        &:hover{
+            color: $on-primary; background: $primary;
+        }
+    }
+
+    &.btn-gradient-hover{
+        color: $primary; background: linear-gradient(90deg, $background 0%, $background 50%, $primary 50%, $secondary 100%);
+        background-size: 200% 200%; background-position: 0%;
+        border: solid 1px $background;
+
+        &:hover{
+            color: $on-primary; 
+            background-position: 100%;
+        }
+    }
     
 }
 
@@ -183,3 +203,5 @@ tr{
 @import 'header';
 @import 'template';
 @import 'footer';
+
+@import 'importation';

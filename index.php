@@ -29,5 +29,8 @@ Route::add('/genielogiciel/generateur.php',function(){
 Route::add('/genielogiciel/importation.php',function(){
     ImportView();
 });
+Route::add('/genielogiciel/importAuto.php',function(){
+    require('controller/importAuto.php');
+});
 
 Route::run('/');
