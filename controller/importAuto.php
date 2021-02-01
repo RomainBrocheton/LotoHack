@@ -84,8 +84,6 @@
         return $result;
     }
 
-<<<<<<< HEAD
-=======
     /**
      * Change le format de date de dd/mm/yyyy à yyyy-mm-dd
      *
@@ -118,7 +116,6 @@
 
 
 
->>>>>>> BDD
     $start = microtime(true);
     // crawling
     $url = "https://www.fdj.fr/jeux-de-tirage/loto/statistiques";
@@ -130,17 +127,21 @@
 
     // read files
     $result = getData($files);
+    $result = array_filter($result, function($v, $k) {
+        if(preg_match('/(\d{4})/', $v['id_tirage'], $output_array)){
+            if($output_array[1] >= 2019)
+                return true;
+            else
+                return false;
+        }
+    }, ARRAY_FILTER_USE_BOTH);
+    
 
     echo "temps exec : " . (microtime(true) - $start);
-<<<<<<< HEAD
-
-    var_dump($result);
-=======
     
 
     /*var_dump($result);*/
 
     mise_a_jour_tables($result);
 
->>>>>>> BDD
 ?>

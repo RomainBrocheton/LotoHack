@@ -165,42 +165,6 @@ button, input[type=button]{
     
 }
 
-<<<<<<< HEAD
-tr{
-    &:nth-of-type(odd){
-        background: #ddd;
-    }
-
-    color: #000;
-
-    span{
-        background: white;
-        display: inline-block;
-        border-radius: 100%;
-        width: 50px;
-        height: 50px;
-        text-align: center;
-        margin: 5px;
-        line-height: 50px;
-        font-size: 20px;
-        font-weight: bold;
-
-        &:nth-of-type(odd){ 
-            border: solid 1px blue;
-        }
-
-        &:nth-of-type(even){ 
-            border: solid 1px red;
-        }
-    }
-
-    th, td{
-        padding: 1rem;
-    }
-}
-
-
-=======
 
 
 tr {
@@ -240,7 +204,6 @@ strong {
 i {
     text-align: center;
 }
->>>>>>> BDD
 
 @import 'header';
 @import 'template';

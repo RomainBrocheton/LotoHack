@@ -1,22 +1,10 @@
 <?php
-<<<<<<< HEAD
-    /***
-     * Models : only data binding. It should not contain any presentation logic.
-     */
-    function db_connect(){
-        try {
-            $db = new PDO('mysql:host=localhost;dbname=genielogiciel;charset=utf8', 'root', 'root') ;
-            return $db ;
-        }
-        catch(Exception $e) {
-            die('Erreur : ' . $e->getMessage()) ;
-=======
 /***
 * Models : only data binding. It should not contain any presentation logic.
 */
 function db_connect() {
     try {
-        $db = new PDO('mysql:host=localhost;dbname=u902185925_loto;charset=utf8', 'root', '') ;
+        $db = new PDO('mysql:host=sql397.main-hosting.eu;dbname=u902185925_loto;charset=utf8', 'u902185925_xmars', '5ay!GGRSm[N') ;
         return $db ;
     }
     catch(Exception $e) {
@@ -101,7 +89,6 @@ function import_tirages(array $result) {
                 'dizaines' => dizaines($res),
                 'finals' => finals($res)
             ));
->>>>>>> BDD
         }
     }
     $req = null;
@@ -160,7 +147,7 @@ function get_frequences() {
     $db = db_connect();
     $frequences = array();
 
-    $req = "SELECT id_num,freq FROM `numeros`";
+    $req = "SELECT id_num,freq FROM Numeros";
     foreach ($db->query($req) as $row) {
         array_push($frequences, 
                     array($row['id_num'],$row['freq'])
@@ -179,7 +166,7 @@ function get_poids_moy() {
     $db = db_connect();
     $poids = 0;
     $i = 0;
-    $req = "SELECT poids FROM `tirages`";
+    $req = "SELECT poids FROM Tirages";
     foreach ($db->query($req) as $row) {
         $poids = $poids + $row['poids'];
         $i++;
@@ -199,7 +186,7 @@ function get_pairs_moy() {
     $db = db_connect();
     $pairs = 0;
     $i = 0;
-    $req = "SELECT nb_pair FROM `tirages`";
+    $req = "SELECT nb_pair FROM Tirages";
     foreach ($db->query($req) as $row) {
         $pairs = $pairs + $row['nb_pair'];
         $i++;
@@ -219,7 +206,7 @@ function get_dizaines_moy() {
     $db = db_connect();
     $dizaines = 0;
     $i = 0;
-    $req = "SELECT dizaines FROM `tirages`";
+    $req = "SELECT dizaines FROM Tirages";
     foreach ($db->query($req) as $row) {
         $dizaines = $dizaines + $row['dizaines'];
         $i++;
@@ -239,7 +226,7 @@ function get_finals_moy() {
     $db = db_connect();
     $finals = 0;
     $i = 0;
-    $req = "SELECT finals FROM `tirages`";
+    $req = "SELECT finals FROM Tirages";
     foreach ($db->query($req) as $row) {
         $finals = $finals + $row['finals'];
         $i++;
@@ -259,7 +246,7 @@ function get_frequences_c() {
     $db = db_connect();
     $frequences = array();
 
-    $req = "SELECT id_num_c,freq_c FROM `numeros_chance`";
+    $req = "SELECT id_num_c,freq_c FROM Numeros_chance";
     foreach ($db->query($req) as $row) {
         array_push($frequences, 
                     array($row['id_num_c'],$row['freq_c'])
@@ -278,7 +265,7 @@ function get_poids_moy_c() {
     $db = db_connect();
     $poids = array();
 
-    $req = "SELECT id_num_c,poids_moy FROM `numeros_chance`";
+    $req = "SELECT id_num_c,poids_moy FROM Numeros_chance";
     foreach ($db->query($req) as $row) {
         array_push($poids, 
                     array($row['id_num_c'],$row['poids_moy'])
@@ -297,7 +284,7 @@ function get_pairs_moy_c() {
     $db = db_connect();
     $pairs = array();
 
-    $req = "SELECT id_num_c,nb_pairs_moy FROM `numeros_chance`";
+    $req = "SELECT id_num_c,nb_pairs_moy FROM Numeros_chance";
     foreach ($db->query($req) as $row) {
         array_push($pairs, 
                     array($row['id_num_c'],$row['nb_pairs_moy'])
@@ -316,7 +303,7 @@ function get_dizaines_moy_c() {
     $db = db_connect();
     $dizaines = array();
 
-    $req = "SELECT id_num_c,nb_dizaines_moy FROM `numeros_chance`";
+    $req = "SELECT id_num_c,nb_dizaines_moy FROM Numeros_chance";
     foreach ($db->query($req) as $row) {
         array_push($dizaines, 
                     array($row['id_num_c'],$row['nb_dizaines_moy'])
@@ -335,7 +322,7 @@ function get_finals_moy_c() {
     $db = db_connect();
     $finals = array();
 
-    $req = "SELECT id_num_c,nb_finals_moy FROM `numeros_chance`";
+    $req = "SELECT id_num_c,nb_finals_moy FROM Numeros_chance";
     foreach ($db->query($req) as $row) {
         array_push($finals, 
                     array($row['id_num_c'],$row['nb_finals_moy'])
@@ -354,7 +341,7 @@ function get_stats_c() {
     $db = db_connect();
     $stats = array();
 
-    $req = "SELECT id_num_c, freq_c,poids_moy,nb_pairs_moy,nb_dizaines_moy,nb_finals_moy FROM `numeros_chance`";
+    $req = "SELECT id_num_c, freq_c,poids_moy,nb_pairs_moy,nb_dizaines_moy,nb_finals_moy FROM Numeros_chance";
     foreach ($db->query($req) as $row) {
         array_push($stats, 
                     array($row['id_num_c'],$row['freq_c'],$row['poids_moy'],$row['nb_pairs_moy'],$row['nb_dizaines_moy'],$row['nb_finals_moy'])
@@ -375,7 +362,7 @@ function get_last(int $x) {
     $tirages = array();
     $strx = strval($x); 
 
-    $req = "SELECT date_tirage, jour, boule_1, boule_2, boule_3, boule_4, boule_5, boule_c FROM `tirages` ORDER BY date_tirage DESC LIMIT " . $strx;
+    $req = "SELECT date_tirage, jour, boule_1, boule_2, boule_3, boule_4, boule_5, boule_c FROM Tirages ORDER BY date_tirage DESC LIMIT " . $strx;
     foreach ($db->query($req) as $row) {
         array_push($tirages,array(date('d-m-Y', strtotime($row['date_tirage'])),$row['boule_1'],$row['boule_2'],$row['boule_3'],$row['boule_4'],$row['boule_5'],$row['boule_c'], $row['jour']));
     }
