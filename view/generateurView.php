@@ -4,14 +4,6 @@
     $image = "./public/images/generateur/GrilleDuLoto.png";
 
     ob_start();
-
-    /*
-    grilleGen();
-    stats();
-    $Last_tirages = get_last(5);
-    $boules = last_to_gen($Last_tirages);
-    $chaine = grilles_gen($boules);
-    */
 ?>
 
 <h1>Grilles à jouer</h1>
@@ -24,23 +16,6 @@
 
     <button onclick="printImg('<?php echo $image; ?>')" type="button" class="btn btn-secondary btn-lg">Imprimer une grille du Loto</button>
 </body>
-
-<!--
-<div class="container-fluid">
-    <div class="row">
-
-        <div class="col-1">
-        </div>
-
-        <div class="col-md-10">
-            <?php echo $chaine ?>
-        </div>
-    
-        <div class="col-1">
-        </div>
-    </div>
-</div>
--->
 
 
 <?php 
