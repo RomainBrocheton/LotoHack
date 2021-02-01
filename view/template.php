@@ -31,7 +31,6 @@
                 <a href="statistiques.php">Statistiques</a>
                 <a href="reducteur.php">Réducteur</a>
                 <a href="generateur.php">Grilles à jouer</a>
-                <a href="importation.php">Importation</a>
             </nav>
         </header>
         <div class="header-gradient"><div></div></div>
