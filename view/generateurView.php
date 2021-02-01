@@ -6,7 +6,7 @@
     ob_start();
 ?>
 
-<h1>Générateur</h1>
+<h1>Grilles à jouer</h1>
 
 <body>
 

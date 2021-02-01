@@ -30,7 +30,7 @@
                 <a href="index.php">Accueil</a>
                 <a href="statistiques.php">Statistiques</a>
                 <a href="reducteur.php">Réducteur</a>
-                <a href="generateur.php">Générateur de grille</a>
+                <a href="generateur.php">Grilles à jouer</a>
                 <a href="importation.php">Importation</a>
             </nav>
         </header>
