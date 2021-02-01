@@ -20,6 +20,9 @@ Route::add('/genielogiciel/statistiques.php',function(){
 Route::add('/genielogiciel/reducteur.php',function(){
     ReducteurView();
 });
+Route::add('/genielogiciel/systeme_reducteur.php',function(){
+    ReducteurProcess($_POST);
+}, 'post');
 Route::add('/genielogiciel/generateur.php',function(){
     GenerateurView();
 });
