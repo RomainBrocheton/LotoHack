@@ -14,4 +14,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
  
 # Push every request to index.php
-RewriteRule ^(.*)$ /genielogiciel/index.php [QSA]
+RewriteRule ^(.*)$ index.php [QSA]

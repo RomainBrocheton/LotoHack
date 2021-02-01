@@ -3,39 +3,39 @@ include('controller/Route.php');
 require('controller/frontendController.php');
 
 // Index
-Route::add('/genielogiciel/',function(){
+Route::add('/',function(){
     require('view/indexView.php');
 });
-Route::add('/genielogiciel/index.php',function(){
+Route::add('/index.php',function(){
     require('view/indexView.php');
 });
 
 // Pages
-Route::add('/genielogiciel/mentions.php',function(){
+Route::add('/mentions.php',function(){
     require('view/mentionsView.php');
 });
-Route::add('/genielogiciel/statistiques.php',function(){
+Route::add('/statistiques.php',function(){
     StatsView();
 });
-Route::add('/genielogiciel/reducteur.php',function(){
+Route::add('/reducteur.php',function(){
     ReducteurView();
 });
-Route::add('/genielogiciel/systeme_reducteur.php',function(){
+Route::add('/systeme_reducteur.php',function(){
     ReducteurProcess($_POST);
 }, 'post');
-Route::add('/genielogiciel/generateur.php',function(){
+Route::add('/generateur.php',function(){
     GenerateurView();
 });
-Route::add('/genielogiciel/importation.php',function(){
+Route::add('/importation.php',function(){
     ImportView();
 });
-Route::add('/genielogiciel/importAuto.php',function(){
+Route::add('/importAuto.php',function(){
     require('controller/importAuto.php');
 });
-Route::add('/genielogiciel/stats.php',function(){
+Route::add('/stats.php',function(){
     stats();
 });
-Route::add('/genielogiciel/grilleGen.php',function(){
+Route::add('/grilleGen.php',function(){
     grilleGen();
 });
 
