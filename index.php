@@ -54,6 +54,6 @@ Route::methodNotAllowed(function($path, $method) {
     header('HTTP/1.0 405 Method Not Allowed');
     echo 'Erreur 405 😮<br>';
     echo 'Cette methode n\'est pas autorisée...';
-  });
+});
 
 Route::run('/');
