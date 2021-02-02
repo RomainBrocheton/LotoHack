@@ -39,4 +39,12 @@ Route::add('/grilleGen.php',function(){
     grilleGen();
 });
 
+
+Route::pathNotFound(function($path) {
+    header('HTTP/1.0 404 Not Found');
+    navi();
+    echo 'Erreur 404 :-(<br>';
+    echo 'La ressource demandée n\'existe pas.';
+});
+
 Route::run('/');
