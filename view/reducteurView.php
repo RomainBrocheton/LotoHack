@@ -8,7 +8,7 @@
 
 <div class="container-fluid">
 <form action="systeme_reducteur.php" method="POST" class="w-100">
-    <p class="lead">Quel numéros souhaitez vous jouer? (entre 5 et 8 - séparer les numéros par une virgule)</p>
+    <p class="lead">Quels numéros souhaitez vous jouer ? (entre 5 et 8 numéros - séparer les numéros par une virgule)</p>
 
     <div class="form-group">
         <label for="numeros">Vos numéros</label>

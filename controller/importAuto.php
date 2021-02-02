@@ -114,9 +114,8 @@
         Vous pouvez revenir à la page précédente.<br />";
     }
 
-
-
     $start = microtime(true);
+
     // crawling
     $url = "https://www.fdj.fr/jeux-de-tirage/loto/statistiques";
     $urls = crawler($url);
@@ -137,11 +136,8 @@
     }, ARRAY_FILTER_USE_BOTH);
     
 
-    echo "temps exec : " . (microtime(true) - $start);
-    
-
-    /*var_dump($result);*/
-
     mise_a_jour_tables($result);
+
+    echo "Fin importation : " . (microtime(true) - $start);
 
 ?>

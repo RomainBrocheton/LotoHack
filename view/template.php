@@ -43,7 +43,6 @@
                     <div class="d-flex justify-content-around">
                         <div class="col text-center">
                             <p>&copy; <?= date('Y'); ?> LotoHACK</p>
-                            <a href="mentions.php">Mentions légales</a>
                         </div>
                     </div>
                 </div>
