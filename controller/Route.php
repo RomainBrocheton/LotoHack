@@ -80,22 +80,19 @@ class Route{
       }
     }
 
+    
     // No matching route was found
-    if(!$route_match_found){
-
+    if (!$route_match_found) {
       // But a matching path exists
-      if($path_match_found){
-        header("HTTP/1.0 405 Method Not Allowed");
-        if(self::$methodNotAllowed){
+      if ($path_match_found) {
+        if (self::$methodNotAllowed) {
           call_user_func_array(self::$methodNotAllowed, Array($path,$method));
         }
-      }else{
-        header("HTTP/1.0 404 Not Found");
-        if(self::$pathNotFound){
+      } else {
+        if (self::$pathNotFound) {
           call_user_func_array(self::$pathNotFound, Array($path));
         }
       }
-
     }
 
   }
