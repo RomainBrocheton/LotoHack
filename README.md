@@ -4,6 +4,9 @@
 > Polytech Marseille, 4A
 > 
 > Romain Brocheton, Michaël Esmieu, Jules Fauvet, Valentin Point
+> 
+
+**Ce repository est désormais archivé.**
 
 ## Sujet du projet
 ### Contexte
@@ -61,3 +64,20 @@ Ceci est un projet qui doit vous permettre la maitrise de la matière Génie Log
 
 1er sous-entendu : le gagnant d’un jeu de hasard est toujours l’opérateur.
 2ème sous-entendu : vous serez le grand gagnant si vous proposez un projet de qualité
+
+### Répartition des tâches
+
+Romain Brocheton :
+* Design
+* Architecture du site
+* Téléchargement automatique et traitement des fichiers historiques des tirages Loto FDJ
+
+Michal Esmieu :
+* Importation SQL
+* Statistiques
+
+Jules Fauvet :
+* Système réducteur
+
+Valentin Point :
+* Impression des grilles
